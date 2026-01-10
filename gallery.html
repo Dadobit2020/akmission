@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - Addis Kidan Mission</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Addis Kidan Mission</h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Mission</a></li>
+                <li><a href="expeditions.html">Burkina Faso Expeditions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Departments ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="medical.html">Medical</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="building.html">Renovation & Building</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="active">Media Gallery</a></li>
+                <li><a href="support.html" class="cta-nav">Support Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Media Gallery</h1>
+            <p>Witness the transformation happening in Burkina Faso</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="gallery-intro">
+                <p class="lead">Pictures and videos tell the story of God's work in Burkina Faso. Browse our collection of photos and video reports from our expeditions and ongoing ministry.</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Media</button>
+                <button class="filter-btn" data-filter="expedition1">Expedition 1</button>
+                <button class="filter-btn" data-filter="expedition2">Expedition 2</button>
+                <button class="filter-btn" data-filter="medical">Medical</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="building">Building</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+            </div>
+
+            <div class="video-section">
+                <h2 class="section-title">Video Reports from Burkina Faso</h2>
+                <p class="section-subtitle">Watch the stories of transformation unfold</p>
+                
+                <div class="video-grid">
+                    <div class="video-card" data-category="expedition2">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">Expedition 2 Highlights</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>5-Day Mission Highlights</h3>
+                            <p>A comprehensive look at our multi-disciplinary expedition serving communities across Burkina Faso.</p>
+                            <span class="video-duration">12:45</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="medical">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">Medical Clinic in Action</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Medical Ministry Impact</h3>
+                            <p>See how our medical team brings healing and hope to communities in need.</p>
+                            <span class="video-duration">8:30</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="education">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">Teacher Training Workshop</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Empowering Educators</h3>
+                            <p>Watch as we equip local teachers with skills to transform their classrooms.</p>
+                            <span class="video-duration">10:15</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="building">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">Building for the Kingdom</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Construction Projects</h3>
+                            <p>From foundation to completion, see how we're building infrastructure for ministry.</p>
+                            <span class="video-duration">9:20</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="expedition1">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">First Steps in Burkina Faso</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Expedition 1 Journey</h3>
+                            <p>Our foundational trip establishing relationships and assessing needs.</p>
+                            <span class="video-duration">11:00</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="community">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <span class="video-title">Community Testimonies</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Voices from the Field</h3>
+                            <p>Hear directly from community members about the impact of our ministry.</p>
+                            <span class="video-duration">7:45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-section">
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Moments captured from our mission work</p>
+                
+                <div class="photo-grid">
+                    <div class="photo-card" data-category="expedition2 medical">
+                        <div class="photo-placeholder">
+                            <span>Medical Clinic</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Medical team serving patients at mobile clinic</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="expedition2 community">
+                        <div class="photo-placeholder">
+                            <span>Community Gathering</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Welcome ceremony with local community leaders</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="education">
+                        <div class="photo-placeholder">
+                            <span>Classroom Learning</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Students in newly renovated classroom</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="building">
+                        <div class="photo-placeholder">
+                            <span>Construction Team</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Building team working on church renovation</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="expedition1">
+                        <div class="photo-placeholder">
+                            <span>Team Meeting</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Expedition 1 team with local church leaders</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="medical">
+                        <div class="photo-placeholder">
+                            <span>Healthcare Workers</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Training local healthcare workers</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="education">
+                        <div class="photo-placeholder">
+                            <span>Teacher Training</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Educators participating in professional development</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="community">
+                        <div class="photo-placeholder">
+                            <span>Worship Service</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Sunday worship in renovated church building</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="building">
+                        <div class="photo-placeholder">
+                            <span>Completed Project</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Newly constructed community center</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="expedition2">
+                        <div class="photo-placeholder">
+                            <span>Mission Team</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Expedition 2 multi-disciplinary team</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="community">
+                        <div class="photo-placeholder">
+                            <span>Children's Ministry</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Children receiving educational materials</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-card" data-category="medical">
+                        <div class="photo-placeholder">
+                            <span>Medical Supplies</span>
+                        </div>
+                        <div class="photo-caption">
+                            <p>Distribution of medications and supplies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-section">
+                <div class="upload-box">
+                    <h3>Share Your Photos & Videos</h3>
+                    <p>Were you part of one of our expeditions? We'd love to feature your photos and videos in our gallery.</p>
+                    <a href="support.html" class="btn btn-primary">Submit Media</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Be Part of the Next Story</h2>
+                <p>Join us on our next expedition and help create more stories of transformation.</p>
+                <div class="cta-buttons">
+                    <a href="expeditions.html" class="btn btn-light">Join Next Expedition</a>
+                    <a href="support.html" class="btn btn-outline-light">Support the Mission</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Addis Kidan Mission</h4>
+                    <p>Evangelical Church Mission Department</p>
+                    <p>Transforming lives through holistic Gospel ministry</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="expeditions.html">Expeditions</a></li>
+                        <li><a href="gallery.html">Media Gallery</a></li>
+                        <li><a href="support.html">Support Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Departments</h4>
+                    <ul>
+                        <li><a href="medical.html">Medical</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="building.html">Building</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p>Email: mission@addiskidan.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">▶️</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Addis Kidan Evangelical Church Mission Department. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
