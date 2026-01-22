@@ -1,0 +1,823 @@
+// Extra Large devices (desktops, less than 1231px)
+@media (max-width: 1440px){
+    .latest_news_area .c-f {
+        padding: 0 15px; 
+    }
+}
+// Large devices (desktops, less than 1231px)
+@media (max-width: 1199px) { 
+    .header_logo_area .header_logo_inner .right_info {
+        padding-left: 0;
+        .media{
+            &:nth-child(2) {
+                padding-left: 15px;
+            }
+            &:nth-child(3) {
+                padding-left: 15px;
+            }
+        }
+    }
+    .main_header_area .header_menu .navbar .navbar_supported ul li a {
+        margin: 0 10px; 
+    }
+    .main_slider_area #main_slider .zeus { 
+        width: 1080px !important; 
+    }
+    .fredration_annual_area .fredration_inner .annual_btn .theme_btn { 
+        line-height: 30px;
+        padding: 10px 20px;
+    }
+    .latest_causes_area .latest_causes_inner .causes_items .causes_content h4{
+        padding-left: 10px;
+        text-align: left;
+    }
+    .charity_organizations .donet_counter.dc_2{
+        padding-left: 15px;
+    }
+    
+    .upcoming_event_area .run_event .official_event {
+        .event_contnet a{
+            font-size: 18px;
+            line-height: 32px;
+        } 
+        .event_img img{
+            height: 170px;
+        }
+    }
+    .uea_3 .run_event .official_event .event_contnet { 
+        padding-right: 50px;
+    }
+    .event_media { 
+        display: block;
+        .event_img img { 
+            width: 100%;
+            height: 348px;
+        }
+    }
+    .mission_area .mission_tab{
+        padding-bottom: 30px;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .grid_gallery_item .gallery_hover .zoom_link{
+        padding-top: 100px;
+    }
+    .ways_volunteer_area .volunteering_row .volunteering_giving {
+        padding-left: 15px;
+    }
+    .shop_with_sidebar .shop_left_sidebar .product_details { 
+        margin-left: 0;
+        padding: 40px 15px 0;
+    } 
+    .office_location_area .office_location_row .location{
+        margin-bottom: 30px;
+        padding: 30px 15px;
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) { 
+    .header_top_area{
+        padding: 10px 0;
+        .header_social{
+            text-align: center;
+            li a{
+                line-height: 40px;
+            }
+        }  
+        .right_nav {
+            float: none;
+            text-align: center;
+            li a{
+                line-height: 40px;
+            }
+        }
+    }
+    .header_logo_area{
+        padding: 0;
+        padding-top: 15px;
+        .navbar-brand{
+            display: block;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .header_logo_inner .right_info .media_btn{
+            float: none;
+            .theme_btn{
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    } 
+    .main_header_area{ 
+        .header_menu {
+            position: relative;
+            .navbar{  
+                width: 100%;
+                .navbar-toggler{ 
+                    font-size: 30px;
+                    color: #fff;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 60px;
+                    &:hover, &:focus{
+                        
+                    } 
+                }
+                .navbar-nav{ 
+                    margin: 0;
+                    margin-top: 2px;
+                    border: 1px solid #fff;
+                    max-height: 330px;
+                    overflow-y: auto;
+                    li{
+                        border-bottom: 1px solid #fff;
+                        &:last-child{
+                            border: 0
+                        }
+                        a{ 
+                            line-height: 45px !important;
+                            margin: 0 20px !important;
+                            &:after{
+                                display: none;
+                            }
+                        }
+                        &.dropdown{
+                            position: relative;
+                            &:after{
+                                content: "\f103";
+                                position: absolute;
+                                top: 0;
+                                right: 20px;
+                                font: normal normal normal 15px/48px FontAwesome;
+                                color: #fff;
+                            }
+                            .dropdown-menu{
+                                background-color: transparent;
+                                border: 0;
+                                border-top: 1px solid #fff;
+                                &:before{
+                                    display: none;
+                                }
+                                li a{ 
+                                    border: 0;
+                                    color: #fff; 
+                                    &:hover, &:focus, &.active{
+                                        color: #fff;
+                                        border: 0;
+                                    }
+                                }
+                                .dropdown:after{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+            .search_button_content {
+                position: absolute;
+                right: 0;
+                top: 0;
+                li {
+                    .shop_btn{
+                        line-height: 50px;
+                        span{
+                            top: 7px; 
+                            padding-left: 1px;
+                        }
+                    }
+                    .quote_btn{
+                        line-height: 58px;
+                    }
+                    .call_support{
+                        padding-top: 17px;
+                    }
+                } 
+                .search_dropbown a{
+                    line-height: 60px !important;
+                }
+            }
+        } 
+    }
+    .main_header_area.navbar_fixed .search_button_content.nav li a{
+        line-height: 58px;
+    } 
+    .mha_2 .header_menu .navbar {
+        .navbar-toggler{
+            color: $bc !important;
+        }
+        .navbar_supported .navbar-nav{
+            border-color: $heding;
+            li{
+                border-color: $heding; 
+            }
+            .dropdown .dropdown-menu {
+                border-color: $heding; 
+                a{
+                    color: $heding;
+                    &:hover, &:focus, &.active{
+                        color: $heding; 
+                    }
+                }
+            } 
+        }
+    }
+    .main_slider_area #main_slider .zeus {
+        width: 750px !important;
+    }
+    .fredration_annual_area .fredration_inner .annual_btn {
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+    .quick_help_need .quick_help_inner .donat_help_content h2{
+        padding-top: 80px;
+        padding-left: 0;
+    }
+    .charity_organizations{
+        padding: 80px 0 0;
+        .charity_content{
+            padding-bottom: 50px;
+            h2{
+                padding-bottom: 20px;
+            }
+        }
+    }
+    .team_member_area .team_item { 
+        max-width: 270px;
+        margin: 0 auto 30px;
+    }
+    .footer_area .copy_right { 
+        padding: 20px 0;
+        p{
+            text-align: center; 
+        }
+        .footer_nav{
+            text-align: center; 
+        }
+    }
+    .qhn_2 {
+        padding-top: 0;
+        .quick_help_inner {
+            .donat_help_content {
+                padding-right: 15px;
+            }
+            .donat_help{
+                padding-top: 40px;
+            }
+        } 
+    }
+    .mha_3 .header_menu {
+        padding-left: 0;
+    }
+    .other_ways_help_area .add_impact{
+        padding-top: 40px;
+    }
+    .pages_banner{
+        margin-top: -62px;
+    }
+    .upcoming_event_area .run_event .official_event .event_img h4{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .event_pages{
+        padding-top: 30px;
+        padding-bottom: 0;
+        .pagination_area{
+            padding-top: 0;
+        }
+    }
+    .footer_area .footer_inner .w_services{
+        padding-left: 15px;
+        padding-top: 20px;
+    }
+    .believe_water_area {
+        .believe_img { 
+            max-width: 460px;
+            margin: 0 auto;
+        } 
+        .believe_water {
+            padding-right: 15px;
+            padding-bottom: 30px;
+        }
+    } 
+    .ways_volunteer_area .volunteering_row .volunteering_giving { 
+        padding-top: 30px;
+    }
+    .shop_with_sidebar {
+        .shop_left_sidebar{
+            padding-bottom: 50px;
+        }
+        .shop_right_sidebar{
+            max-width: 400px
+        }
+    } 
+    .causes_area .causes_right_sidebar{
+        max-width: 300px;
+        margin: auto;
+    } 
+}
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) {
+    .main_slider_area #main_slider .zeus {
+        width: 660px !important;
+    }
+    .fredration_annual_area { 
+        padding: 80px 0 50px;
+        .fredration_inner { 
+            padding: 15px 15px 25px; 
+            margin-bottom: 80px;
+        }
+    }
+    .latest_causes_area {
+        padding: 60px 0;
+        .latest_causes_inner .causes_items { 
+            max-width: 370px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
+    .tittle .theme_btn{
+        float: left;
+        margin-top: 20px;
+    }
+    .charity_organizations .charity_content h2{
+        font-size: 25px;
+        line-height: 36px;
+    }
+    .team_member_area { 
+        padding: 60px 0 0;
+    }
+    .testimonial_area{
+        padding: 135px 0;
+        .ts_slider .carousel-item p{
+            font-size: 16px;
+            line-height: 32px;
+        }
+    }
+    .upcoming_event_area{
+        padding: 60px 0;
+    }
+    .latest_news_area{
+        padding-top: 0;
+    }
+    .latest_news_area .news_items { 
+        max-width: 370px;
+        margin: 0 auto 30px;
+        a{
+            padding-top: 20px;
+        }
+        h6{
+            padding-top: 10px;
+        }
+    }
+    .footer_area {
+        padding-top: 60px;
+        .footer_inner {
+            padding-bottom: 50px;
+            .resources, .r-2 {
+                margin-top: 0;
+                padding-left: 15px;
+            }
+            .w_services{
+                padding-left: 15px;
+                padding-top: 30px;
+                h6{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .you_can_help_area .you_can_help_row {
+        padding-bottom: 40px;
+        p{
+            padding: 80px 15px 0;
+        }
+        .theme_btn{
+            float: none;
+            margin: 0;
+            margin-top: 20px;
+        }
+    }
+    .fredration_annual_area{
+        padding-top: 80px;
+    }
+    .uea_3{
+        padding-top: 0;
+    }
+    .other_ways_help_area{
+        padding-bottom: 0;
+    }
+    .pages_banner{
+        padding-top: 140px;
+        h2{
+            font-size: 30px;
+            line-height: 40px;
+        }
+        .breadcrumb{
+            padding-top: 50px;
+        }
+    }
+    .causes_area{
+        padding-top: 80px;
+    }
+    .event_details .donations_details .datails_timar {
+        .book_now{
+            position: relative;
+            left: 0;
+            right: auto;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        .timer{
+            padding-bottom: 20px;
+        }
+    }
+    .faa_4 {
+        padding-bottom: 0 !important;
+    }
+    .lca_4{
+        padding-top: 0 !important;
+    }
+    .causes_area .causes_left_sidebar .causes_media { 
+        display: block;
+        max-width: 370px;
+        margin: 0 auto 30px;
+        .media-body{
+            padding-left: 0;
+        }
+    }
+    .ucha_2 {
+        margin-top: 80px; 
+    }
+    .mission_area .mission_tab .tab_nav li{
+        padding: 0;
+        padding-right: 20px;
+        a{
+            font-size: 14px;
+            line-height: 30px;
+            margin-bottom: 5px;
+            padding: 0;
+            padding-right: 20px;
+        }
+    } 
+    .owha_2 .add_impact{
+        padding-bottom: 30px;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .grid_gallery_item .gallery_hover .zoom_link {
+        padding-top: 40px;
+    }
+    .ways_volunteer_area{
+        padding-top: 80px;
+        h2{
+            font-size: 25px;
+            line-height: 36px;
+        }
+    }
+    .faq_area{
+        padding: 80px 0;
+        .faq_accordion .item .plp {
+            padding-right: 0;
+        }
+    }
+    .login_area { 
+        padding-top: 80px;
+        padding-bottom: 20px;
+        .login_inner .login_from .custom-checkbox .custom-control-label {
+            line-height: 35px;
+            margin-top: -10px;
+        }
+    }
+    .shop_with_sidebar { 
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+    .blog_list {
+        .blog_items {
+            .blog_heding { 
+                padding: 20px 0;
+                font-size: 18px;
+                line-height: 35px;
+            }
+            .ad_2{
+                h4{
+                    display: block;
+                    float: none;
+                    line-height: 35px;
+                }
+                .like_comment {
+                    float: none;
+                    padding-right: 0;
+                    li:first-child{
+                        padding: 0;
+                    }
+                }
+            } 
+        }
+        .looking {
+            .looking_text {
+                padding-right: 15px;
+            }
+            .lt_2 {
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-top: 20px;
+            }
+        }
+    }
+    .contact_area{
+        padding-top: 80px;
+        .contact_tittle{
+            p{
+                padding-top: 10px;
+            }
+            h2{
+                font-size: 25px;
+            }
+        } 
+    }
+    .office_location_area { 
+        padding-top: 20px;
+        .facebook_btn {
+            padding-top: 10px;
+        }
+    }
+    .map_area { 
+        margin-top: 60px;
+        .mapBox{
+            height: 400px;
+        }
+    }
+}
+// Extra small devices (portrait phones, less than 576p)
+@media (max-width: 575px) {
+    .header_logo_area .header_logo_inner .right_info {
+        padding-left: 15px;
+        max-width: 285px;
+        margin: 0 auto;
+    }
+    .main_header_area .header_menu .search_button_content li {
+        .quote_btn {
+            font-size: 16px;
+            line-height: 57px;
+            min-width: 150px;  
+        }
+        &.search_dropbown {
+            padding: 0 15px;
+        }
+    }
+    .main_slider_area #main_slider .get_started_btn .theme_btn{
+        min-width: 160px;
+        zoom: 80%;
+    }
+    .quick_help_need .quick_help_inner {
+        .donat_help_content h2{
+            font-size: 25px;
+            line-height: 36px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .donat_help {
+            .donated_pie{
+                display: block;
+                text-align: center;
+                .pie_chart{
+                    padding: 20px 0;
+                }
+            }
+            .more_donation li .more_details{
+                margin-left: 10px;
+            }
+        }
+    }
+    .tittle {
+        h2{
+            font-size: 25px;
+            line-height: 36px;
+        }
+        p{
+            line-height: 32px;
+        }
+    }
+    .charity_organizations .donet_counter .media {
+        margin-bottom: 40px;
+    }
+    .testimonial_area { 
+        padding-bottom: 68px;
+    }
+    .stay_informed_area {
+        padding-bottom: 30px;
+        .informed .informed_btn{
+            margin-right: 20px;
+        }
+    }
+    .footer_area .copy_right p{
+        padding-top: 15px;
+    }
+    .main_header_area .header_menu .search_button_content li .call_support { 
+        display: none;
+    }
+    .faa_2 .fredration_inner {
+        margin-top: 40px; 
+        margin-bottom: 0;
+    }
+    .other_ways_help_area .other_ways_help .open_today{
+        padding: 15px;
+    }
+    .upcoming_event_area .run_event .official_event .event_contnet{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .event_pages {
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+    .event_media{
+        max-width: 370px;
+        margin: 0 auto 30px;
+        .event_img img{
+            width: auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .media-body { 
+            position: relative; 
+            padding: 30px 15px 100px;
+            h3{
+                display: block;
+                .theme_btn{
+                    display: block;
+                    margin-left: 0; 
+                    position: absolute;
+                    left: 15px;
+                    right: 15px;
+                    bottom: 30px;
+                }
+            } 
+            h6 { 
+                padding-bottom: 10px;
+            }
+        } 
+    } 
+    .event_details .donations_details .datails_timar .event_date li.money { 
+        float: none;
+        display: block;
+    }
+    .donations_details .timer .ds-element{
+        border-bottom: 1px solid #fff;
+    }
+    .comments_area .comment { 
+        display: block;
+        .media-body {
+            padding-left: 0;
+            margin-top: 20px;
+        }
+    }
+    .leave_comment .comment_from { 
+        padding-left: 15px;
+        padding-right: 15px;
+        .form-group { 
+            margin-bottom: 20px;
+        }
+    }
+    .details .author {
+        padding: 20px 15px;
+        display: block;
+        text-align: center;
+        .media-body { 
+            padding: 30px 0 0;
+            .author_name{
+                display: block;
+            }
+            .share_btn { 
+                display: block;
+                float: none;
+                padding-top: 20px;
+            }
+        }
+    } 
+    .donations_details {
+        .timer { 
+            display: block; 
+            text-align: center; 
+        }
+        .donated_pie {
+            display: block; 
+            text-align: center;
+            .smpie_chart{
+                margin: 20px 0;
+            }
+        }
+    }
+    .believe_water_area .believe_img::after {
+        display: none;
+    }
+    .believe_water_area {
+        padding-top: 0;
+        .believe_water h4{
+            font-size: 18px;
+            line-height: 32px;
+        }
+    }
+    .other_ways_help_area .other_ways_help .open_today {
+        h3{
+            display: block;
+            float: none;
+        }
+        span { 
+            float: none; 
+            display: block;
+            text-align: center;
+            margin: 0; 
+        }
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .grid_gallery_item { 
+        max-width: 370px;
+        margin: 0 auto 30px;
+        .gallery_hover .zoom_link {
+            padding-top: 100px;
+        }
+    }
+    .faq_area .faq_accordion .item a {
+        line-height: 36px;
+        padding: 5px 60px 5px 20px;
+    }
+    .breadcrumb2 {
+        position: relative !important;
+        padding-top: 0 !important;
+    }
+    .shop_with_sidebar .shop_left_sidebar .shop_items { 
+        max-width: 300px;
+        margin: 0 auto 30px;
+    }
+    .shop_with_sidebar .shop_left_sidebar {
+        .review-tab .nav-tabs li {
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+            a{
+                display: block;
+                width: 100%;
+            }
+        } 
+        .product_details .value-section li .theme_btn{
+            margin: 0;
+        }
+    }
+    .blog_list .blog_items .admin_details .like_comment{
+        padding-left: 20px;
+        li{
+            padding: 0;
+            padding-right: 20px;
+            line-height: 35px;
+            &:first-child{
+                padding: 0;
+            }
+        }
+    }
+    .blog_list .blog_comment .media { 
+        display: block;
+        .media-body{
+            padding-left: 0;
+            padding-top: 30px;
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 360p) 
+@media (max-width: 360px) {
+    .header_top_area .header_social li{
+        padding-left: 10px;
+    }
+    
+    .main_header_area .header_menu .search_button_content li {
+        .quote_btn {
+            font-size: 15px; 
+            min-width: 130px;  
+        }
+        &.search_dropbown {
+            padding: 0 10px;
+        }
+    }
+    .fredration_annual_area .fredration_inner {
+        .annual_btn .theme_btn{
+            font-size: 14px;
+        }
+        .fredration_text h4{
+            font-size: 16px;
+            line-height: 32px; 
+        }
+    }
+    .fredration_annual_area .give_inspiration .inspiration h2 {
+        font-size: 25px;
+        line-height: 36px;
+    }
+    .details .foulkes{
+        margin-left: 15px;
+    }
+    .mission_area .mission_impact{
+        width: 100%; 
+    }
+    .blog_list .blog_comment .media .media-body h6 a{
+        padding-left: 20px;
+    }
+}

@@ -1,0 +1,124 @@
+/* fredration_annual_area */
+.fredration_annual_area{
+    display: block;
+    overflow: hidden;
+    padding: 150px 0 125px;
+    .fredration_inner{
+        border: 1px solid #ecebeb;
+        padding: 50px 44px 44px;
+        margin: 0;
+        margin-bottom: 142px;
+        .fredration_text{
+            h4{
+                font: 400 18px/36px $pop;
+                color: $bc;
+            }
+            h6{
+                font: 400 16px/30px $open;
+                color: #acabab;
+                padding-top: 7px;
+            }
+        }
+        .annual_btn{
+            padding-left: 65px;
+            padding-top: 5px;
+            .theme_btn{
+                display: block;
+                font-size: 16px;    
+                line-height: 55px; 
+            }
+        }
+    }
+    //* give_inspiration
+    .give_inspiration{
+        .inspiration{
+            background: #4c4c4c;
+            padding: 45px 20px;
+            text-align: center;
+            @include transition;
+            margin-bottom: 30px;
+            &:hover, &:focus, &.active{
+                background: $bc;
+            }
+            h2{
+                font: 600 32px/45px $pop;
+                color: #fff;
+            }
+            p{
+                font: 400 16px/30px $open;
+                color: #fff;
+                padding-top: 20px;
+            }
+            h3{
+                font: 600 20px/32px $open;
+                color: #fff;
+                padding: 23px 0 48px;
+            }
+            .theme_btn{
+                min-width: 182px;
+                background: #ff9507;
+            }
+        }
+    }
+}
+.faa_2{
+    padding-top: 160px;
+    .fredration_inner{
+        margin-top: 105px;
+        margin-bottom: 25px;
+    }
+}
+.faa_3{
+    padding-bottom: 25px;
+    .give_inspiration .inspiration{
+        background: #fff; 
+        box-shadow: 0px 0px 22px 0px rgba(228, 228, 228, 0.75);
+        h2{
+            color: #171616;
+        }
+        h3{
+            color: #4b4b4b;
+            padding-top: 35px;
+        }
+        &:hover, &.active{
+            h2, h3{
+                color: #fff;
+            }
+        }
+    }
+}
+.faa_4{
+    padding: 160px 0 100px;
+    .fredration_inner{
+        margin: 0;
+    }
+}
+/* End fredration_annual_area */
+ 
+
+/* You_can_help_area */
+.you_can_help_area{
+    display: block;
+    overflow: hidden; 
+    background: #ff9507 url('../images/help-bg-shap.png') no-repeat top right;
+    max-width: 1545px; 
+    .you_can_help_row{
+        p{
+            font: 400 18px/40px $pop;
+            color: #fff; 
+            padding: 50px 0 40px 55px;
+        }
+        .theme_btn{ 
+            float: right;
+            margin-right: 78px;
+            margin-top: 70px;
+            line-height: 55px;
+            min-width: 215px;
+        }
+    }
+}
+.ucha_2{
+    margin-top: 175px;
+    margin-bottom: 10px;
+}
+/* End you_can_help_area */

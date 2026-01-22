@@ -1,0 +1,289 @@
+/* Team Member Area */
+.team_member_area{
+    display: block;
+    overflow: hidden;
+    padding: 160px 0 100px;
+    .team_item{
+        text-align: center;
+        margin-bottom: 30px;
+        img{
+            max-width: 100%;
+        }
+        .team_mg{
+            position: relative; 
+            z-index: 2;    
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: block; 
+                background: rgba(255, 149, 7, 0.729);
+                z-index: 1;
+                transition: all 400ms linear 0s;
+                opacity: 0;
+            }
+            .hover_icons{
+                position: absolute;
+                top: 10px;
+                right: -100px;
+                z-index: 3;
+                transition: all 500ms linear 0s;
+                li a{ 
+                    font-size: 16px;
+                    color: #fff;
+                    display: block;
+                    padding-top: 8px;
+                    &:hover, &:focus{
+                        color: $pfont;
+                    }
+                }
+            }
+        } 
+        &:hover, &:focus{
+            .team_mg{ 
+                &:after{
+                    opacity: 1;
+                }
+                .hover_icons{
+                    right: 16px;
+                }
+            }
+        }
+        .team_name{
+            font: 500 22px/1 $pop;
+            color: #242222;
+            display: block;
+            padding-top: 40px;
+            &:hover, &:focus{
+                color: $bc;
+            }
+        }
+        h6{
+            font: 400 16px/30x $open;
+            color: $pfont;
+            padding-top: 13px;
+        }
+    }
+}
+.tma_2{
+    padding: 40px 0 90px; 
+}
+.tma_3{
+    padding-top: 140px;
+    padding-bottom: 20px;
+    .team_item{
+        margin-bottom: 65px;
+    }
+}
+/* Team Member Area */
+
+/* Testimonial Area */
+.testimonial_area{
+    display: block;
+    overflow: hidden;
+    background: url("../images/ts-bg.jpg") no-repeat center fixed;
+    background-size: cover; 
+    position: relative; 
+    z-index: 2;    
+    text-align: center;
+    padding: 135px 0 230px;
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block; 
+        background-color: rgba(0, 0, 0, 0.678);
+        z-index: -1; 
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-style: solid;
+        border-width: 0 0 205px 1920px;
+        border-color: transparent transparent #fff transparent;
+    }
+    .shap_angle{ 
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-style: solid;
+        border-width: 100px 1920px 0 0;
+        border-color: #fff transparent transparent transparent;
+    }
+    .ts_slider{
+        position: relative;
+        .carousel-item{
+            img{
+                width: 94px;
+                height: 94px; 
+                max-width: 100;
+            }
+            h4{
+                font: 600 18px/3px $open;
+                color: #fff;
+                padding: 20px 0 30px;
+                span{
+                    padding-left: 10px;
+                }
+            }
+            .rating{
+                padding-bottom:35px;
+                position: relative;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 93px;
+                    height: 1px;
+                    background: #fff;
+                }
+                li{
+                    display: inline-block;
+                    color: $bc;
+                    font-size: 20px;
+                    padding-left: 7px;
+                    &:first-child{
+                        padding-left: 0;
+                    } 
+                }
+            }
+            p{
+                font: 400 20px/40px $open;
+                color: rgba(255, 255, 255, 0.902);
+                max-width: 800px; 
+                margin: 0 auto;
+                padding-top: 40px;
+            }
+        }
+        .carousel-control-prev, .carousel-control-next{
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+            background: $bc;
+            height: 40px;
+            top: 50%;
+            display: none;
+        }
+        &:hover{
+            .carousel-control-prev, .carousel-control-next{
+                display: block;
+            }
+        }
+    }
+}
+/* Testimonial Area */
+
+/* children_care Area */
+.children_care_area{
+    display: block;
+    overflow: hidden;
+    padding: 100px 0;
+    .children_care{
+        cursor: e-resize;
+        .item a{
+            display: block;
+            overflow: hidden;
+            border: 1px solid #e2e1e1;
+            text-align: center;
+            padding: 25px; 
+            position: relative;  
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0); 
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s; 
+            &:after{
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $bc;
+                -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+                -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0;
+                -webkit-transition-property: transform;
+                transition-property: transform;
+                -webkit-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+                -webkit-transition-timing-function: ease-out;
+                transition-timing-function: ease-out; 
+            }
+            i:before{ 
+                display: block;
+                font-size: 50px;
+                color: $bc;
+                line-height: 1;
+            }
+            span{
+                display: block;
+                font: 600 18px/35px $open;
+                color: #181717;
+                padding-top: 20px;
+            }
+            &:hover, &:focus{ 
+                border-color: $bc; 
+                i:before, span{
+                    color: #fff;  
+                } 
+                &:after{
+                    -webkit-transform: scaleY(1);
+                    transform: scaleY(1);
+                    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+                    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); 
+                }
+            }
+        }
+    }
+}
+.cca_2{
+    padding:130px 0;
+}
+/* End children_care Area */
+
+/* Client Logo Area */
+.client_logo_area{
+    display: block;
+    overflow: hidden;
+    padding: 80px 0 74px; 
+    background: $bc;
+    margin-top: 40px;
+    .container{
+        @media (min-width: 1230px){
+            max-width: 1260px;
+        }
+    }
+    .client_logo{
+        cursor: col-resize;
+        .item{
+            text-align: center;
+            height: 94px;
+            display: flex;
+            align-items: center;
+            img{
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+/* End Client Logo Area */

@@ -1,0 +1,175 @@
+/* Slider Area */
+.main_slider_area{ 
+    #main_slider{
+        .concept_title{
+            color: #fff;
+            text-align: center !important;
+            font-weight: bold;
+        }
+        .concept_title_left{
+            text-align: left !important;
+        }
+        .concept_title_right{
+            text-align: right !important;
+        }
+        .slider_sm_heding{
+            color: $bc; 
+            font: 400 18px/35px $pop;
+            .safely_trade{
+                color: $bc;
+            }
+        }
+        .get_started_btn{
+            .theme_btn{ 
+                text-align: center !important;
+                min-width: 233px; 
+                display: inline-block;
+                margin-right: 20px;   
+                background: $bc;
+                padding-right: 50px;  
+                i:before{
+                    opacity: 1; 
+                    line-height: 50px; 
+                    font-size: 14px; 
+                    padding-left: 20px; 
+                    position: absolute; 
+                }  
+            }
+            
+            .donation_btn{  
+                border: 2px solid #fff; 
+                background: transparent;
+                line-height: 46px;
+                padding: 0;
+                i:before{ 
+                    line-height: 46px;
+                    @include transition;
+                    opacity: 0;
+                }
+                &:before{ 
+                    background-color: rgba(255,158,28,0.25); 
+                }
+                &:after{ 
+                    background-color: $bc; 
+                }
+                &:hover, &:focus{ 
+                    color: #fff;
+                    border-color: $bc;  
+                    padding-right: 30px; 
+                    i:before{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .zeus{ 
+            right: 0;
+            width: 1170px !important;
+            margin: 0 auto;
+            .tp-bullet{ 
+                background: #fff;
+                border: 0;
+                height: 8px;
+                width: 26px;
+                border-radius: 10px;
+                &:after{
+                    border-radius: 10px !important;
+                } 
+            }
+            .selected{
+                background: $bc !important; 
+                border-color: $bc; 
+                &:after{
+                    background: $bc !important;
+                } 
+            } 
+        }
+    } 
+} 
+/* End Slider */  
+
+/* Pages banner */  
+.pages_banner{
+    background: url("../images/pages-banner-1.jpg") no-repeat center;
+    background-size: cover;
+    margin-top: -80px;
+    text-align: center;
+    padding: 218px 0 0;
+    position: relative;
+    z-index: 1;
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.651);
+        z-index: -1;
+    }
+    h2{
+        color: #fff;
+        font: 500 48px/74px $pop;
+    }
+    .breadcrumb{
+        background-color: transparent; 
+        text-align: center;
+        display: block;
+        margin: 0;
+        padding: 118px 0 22px; 
+        li{
+            display: inline-block;
+            padding-left: 22px;
+            position: relative;
+            &:after{
+                content: ".";
+                position: absolute;
+                color: #fff;
+                top: 0;
+                left: 7px; 
+            }
+            &:first-child{
+                padding: 0;
+                &:after{
+                    display: none;
+                }
+            }
+            a{
+                text-align: center;
+                font: 400 16px/1 $pop;
+                color: #fff;
+                &:hover, &:focus, &.active{
+                    color: $bc;
+                }
+            }
+        }
+    }
+}
+.pb_2{
+    background-image: url("../images/pages-banner-2.jpg");
+    &:after{
+        display: none;
+    }
+    h2{
+        color: $heding;
+    }
+    .breadcrumb li{
+        &:after{
+            color: $heding;
+        }
+        a{
+            color: $heding;
+        }
+    } 
+    .container{
+        position: relative;
+    }
+    .breadcrumb2{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+/* End Pages banner */  
+ 

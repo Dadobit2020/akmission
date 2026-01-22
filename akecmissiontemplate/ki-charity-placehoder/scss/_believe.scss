@@ -1,0 +1,126 @@
+/* We believe water */
+.believe_water_area{
+    display: block;
+    overflow: hidden;
+    padding-top: 30px;
+    .believe_water{
+        padding-right: 48px;
+        h4{
+            font: 400 26px/40px $pop;
+            color: #171616;
+            padding-top: 20px;
+        }
+        p{
+            font: 400 16px/36px $open;
+            color: $pfont;
+            padding-top: 43px;
+        }
+        
+        .theme_btn{ 
+            width: 234px;
+            line-height: 60px;
+            display: block;
+            font-size: 16px; 
+            margin-top: 70px;
+        }
+    }
+    .believe_img{
+        text-align: right;
+        padding-top: 33px; 
+        margin-left: 10px;
+        z-index: 1;
+        position: relative;
+        &:after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 20px;
+            bottom: 33px;
+            display: block; 
+            background: #f8d19d;
+            z-index: -1;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+    .volunteer{
+        padding-top: 40px;
+        img{
+            max-width: 100%;
+        }
+        .theme_btn{
+            margin: 0 auto;
+            width: 234px;
+            line-height: 60px;
+            display: block;
+            font-size: 16px; 
+            margin-top: 70px;
+        }
+    }
+}
+/* End We believe water */
+
+/* WAYS TO VOLUNTEER */
+.ways_volunteer_area{
+    display: block;
+    overflow: hidden;
+    padding-top: 150px;
+    h6{
+        font: 600 16px/36px $pop;
+        color: #ff9507;
+    }
+    h2{
+        font: 600 38px/50px $pop;
+        color: $heding;
+        padding-top: 30px;
+    }
+    .volunteering_row{
+        padding-top: 60px;  
+        img{ 
+            @media (max-width: 1366px){
+                max-width: 100%;
+            }    
+        }
+        .volunteering_giving{
+            padding-left: 64px;
+            p{
+                font: 400 16px/30px $open;
+                color: $pfont;
+                padding-bottom: 30px; 
+            }
+            .meet_people{
+                li{
+                    font: 400 16px/40px $open;
+                    i{
+                        font-size: 14px;
+                        color: $bc;
+                        padding-right: 15px;
+                    }
+                }
+            }
+        }
+        
+        .meet_people_2{
+            padding-top: 50px;
+            padding-right: 0; 
+            li{
+                font: 400 16px/40px $open;
+                i{
+                    font-size: 14px;
+                    color: $bc;
+                    padding-right: 15px;
+                }
+            }
+        }
+        .volunteer-hands{
+            padding-top: 30px;
+            text-align: right;
+            img{
+                max-width: 100%; 
+            }
+        }
+    }
+}
+/* End WAYS TO VOLUNTEER */

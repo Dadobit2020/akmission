@@ -1,0 +1,148 @@
+/*Prefix Styles*/ 
+body{
+	font-family: $pop; 
+    h1,h2,h3,h4,h5,h6{
+        margin: 0;
+    }
+	p{
+		color: $pfont;
+        margin: 0; 
+        font: 400 16px/30px $open;
+	}
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+        }
+    }
+
+	/*Section Fix*/
+	section, header, footer{
+		&.row{
+			margin: 0; 
+		}
+	} 
+    
+    #success{
+        display: none;
+    }
+    #error{
+        display: none;
+    }  
+    iframe{
+        border: none;
+    }
+    i{
+        &:before{
+            margin-left: 0px !important; 
+        }
+    }
+    /*Ancore*/
+    a,.btn,button{
+        outline: none;
+        @include transition;
+        &:before,&:after{
+            @include transition;
+        }
+        &:focus,&:hover{  
+            outline: none;
+            text-decoration: none;
+            @include transition;
+        }
+    }
+}
+/* preloader */
+.preloader{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0; 
+    display: flex;
+    background: #fff;
+    z-index: 99999999; 
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        margin-left: 10%;
+        transform: translate3d(-50%, -50%, 0); 
+        .dot {
+            width: 24px;
+            height: 24px;
+            background: $bc;
+            border-radius: 100%;
+            display: inline-block;
+            animation: slide 1s infinite;
+            &:nth-child(1) {
+                animation-delay: 0.1s;
+                background: $bc;
+            }
+            &:nth-child(2) {
+                animation-delay: 0.2s;
+                background: $heding;
+            }
+            &:nth-child(3) {
+                animation-delay: 0.3s;
+                background: $pfont;
+            }
+            &:nth-child(4) {
+                animation-delay: 0.4s;
+                background: #4c4c4c;
+            }
+            &:nth-child(5) {
+                animation-delay: 0.5s;
+                background: #d7d1cf;
+            }
+        }
+    } 
+}
+@-moz-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+} 
+@-webkit-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+} 
+@-o-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+} 
+@keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

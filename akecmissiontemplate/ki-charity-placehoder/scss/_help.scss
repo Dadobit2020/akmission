@@ -1,0 +1,296 @@
+/* Quick_help_need */
+.quick_help_need{
+    display: block;
+    overflow: hidden;
+    background: url("../images/quick-help-bg.jpg") no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding: 120px 0;
+    &:after{
+        content: "";
+        position: absolute;
+        top: 42px;
+        bottom: 42px;
+        display: block; 
+        background-color: rgba(0, 0, 0, 0.671);
+        width: 100%;
+        z-index: -1;
+    }
+    .quick_help_inner{
+        .donat_help{
+            padding-right: 0;
+            h2{
+                font: 500 35px/50px $pop;
+                color: #fff;
+            }
+            p{
+                color: rgba(255, 255, 255, 0.702);
+                font: 400 18px/35px $open;
+                padding-top: 40px;
+            }
+            .homeless_btn{
+                padding-top: 38px;
+                li{
+                    display: inline-block;
+                    padding-right: 2px; 
+                    &:last-child{
+                        padding-right: 0;
+                    }
+                    a{
+                        font: 400 15px/ 35px $open;
+                        color: #fff;
+                        background: transparent;
+                        min-width: 190px;
+                        border: 1px solid #262626;
+                        border-radius: 0; 
+                        i{
+                            padding-right: 20px;
+                            font-size: 18px;
+                        }
+                        &:before{ 
+                            background-color: rgba(255,158,28,0.25); 
+                        }
+                        &:after{ 
+                            background-color: $bc; 
+                        }
+                        &:hover, &:focus{ 
+                            color: #fff;
+                            border-color: $bc;   
+                        }
+                        &.active{
+                            background: $bc;
+                            border-color: $bc;
+                        }
+                    }
+                }
+            }
+            h4{
+                font: 600 25px/32px $open;
+                color: #fff;  
+            }
+            .pie_chart{ 
+                padding: 0 35px;
+            }
+            .donated_pie{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden; 
+                margin-top: 40px; 
+            }
+            .text-center{
+                margin-top: -15px;
+            }
+            .more_donation{
+                padding-top: 35px;
+                display: block;
+                overflow: hidden;
+                text-align: center;
+                margin-bottom: -10px;
+                li{
+                    display: inline-block; 
+                    text-align: center;
+                    .theme_btn{
+                        min-width: 182px; 
+                        float: left;
+                    }
+                    .more_details{
+                        font: 600 18px/30px $pop;
+                        color: #fff;
+                        display: inline-block;
+                        border-bottom: 1px solid $bc;
+                        margin-left: 45px;
+                        float: right;
+                        margin-bottom: 10px;
+                        &:hover, &:focus{
+                            color: $bc;
+                        }
+                    }
+                }
+            }
+        }
+        .donat_help_content{
+            text-align: center;
+            h2{
+                color: #fff;
+                font: 500 40px/58px $pop; 
+                padding: 150px 0 95px 58px;
+            }
+            .theme_btn{
+                border: 2px solid #474747;
+                line-height: 64px;
+                min-width: 244px;
+                background-color: transparent; 
+                &:before{ 
+                    background-color: rgba(255,158,28,0.25); 
+                }
+                &:after{ 
+                    background-color: $bc; 
+                }
+                &:hover, &:focus{ 
+                    color: #fff;
+                    border-color: $bc;   
+                }
+            }
+        }
+    }
+}
+.qhn_2{
+    background-image: url("../images/quick-help-bg-2.jpg");
+    &:after{
+        top: 0;
+        bottom: 0;
+    }
+    .quick_help_inner .donat_help_content{
+        padding-right: 90px;
+        h2{
+            padding-left: 0; 
+        }
+    } 
+}
+
+/* Quick_help_need */
+
+/* pie_chart */
+.pie_chart, .smpie_chart {
+    display: inline-block;
+    position: relative;
+    text-align: center; 
+    .pie-value {
+        display: block;
+        height: 110px;
+        position: absolute;
+        font: 500 18px/35px $pop;
+        color: $bc;
+        height: 40px;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-top: -20px; 
+    }
+}
+
+/* other_ways_help_area */
+.other_ways_help_area{
+    display: block;
+    overflow: hidden;
+    padding: 60px 0 100px;
+    .other_ways_help{
+        h2{
+            font: 500 22px/32px $pop;
+            color: #000;
+        }
+        p{
+            font: 400 16px/32px $open;
+            color: $pfont;
+            padding: 40px 0 30px;
+        }
+        .involved_btn{
+            font: 700 16px/32px $open;
+            color: #000;
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100px;
+                border-bottom: 1px solid $bc;
+            }
+            i{
+                padding-left: 8px;
+                font-size: 18px;
+                color: $bc;
+                @include transition;
+            }
+            &:hover, &:focus{
+                color: $bc;
+                i{
+                    padding-left: 4px;
+                }
+            }
+        }
+        .open_today{
+            background: $bc;
+            margin-top: 55px;
+            display: block;
+            overflow: hidden;
+            padding: 25px 70px 32px 35px;
+            max-width: 500px;
+            p{
+                color: #fff;
+                padding: 0; 
+            }
+            h3{
+                color: #fff;
+                font: 600 32px $pop;
+                display: inline-block;
+                padding-top: 30px;
+                float: left;
+            }
+            span{
+                color: $pfont;
+                background: #fff;
+                padding: 0 20px;
+                font: 400 14px/35px $open;
+                border-radius: 30px;
+                display: inline-block;
+                float: right;
+                margin-top: 35px;
+            }
+        }
+    }
+    .add_impact{ 
+        h2{
+            font: 500 22px/32px $pop;
+            color: #000;
+        }
+        p{
+            font: 400 16px/32px $open;
+            color: $pfont;
+            padding: 40px 0 20px;
+        }
+        .signup_from{
+            .form-group{
+                margin-top: 5px;
+                .form-control{
+                    font: 400 16px/32px $open;
+                    color: $pfont;
+                    border: 0;
+                    box-shadow: none;
+                    outline: none;
+                    border: 0;
+                    border-bottom: 1px solid #e6e6e5;
+                    border-radius: 0;
+                    padding: 20px 0; 
+                    @include placeholder{ 
+                        color: $pfont; 
+                    }
+                    &:focus{
+                        @include placeholder{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            
+            .signup_btn{
+                padding-top: 20px;
+                .theme_btn{
+                    border: 0; 
+                    box-shadow: none;
+                    outline: none;
+                    min-width: 140px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+.owha_2{
+    padding: 10px 0 125px;
+}
+/* other_ways_help_area */

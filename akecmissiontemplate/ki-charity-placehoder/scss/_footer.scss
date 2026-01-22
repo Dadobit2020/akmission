@@ -1,0 +1,118 @@
+/* Footer Home pages */
+.footer_area{ 
+    display: block;
+    overflow: hidden;
+    background: #252525;
+    padding-top: 120px;
+    .footer_inner{ 
+        padding-bottom: 27px;    
+        .footer_logo{
+            margin-bottom: 30px;
+            img{
+                max-width: 100%;
+            }
+            p{
+                font: 400 16px/32px $open;
+                color: #787777;
+                padding: 50px 20px 35px 0;
+            }
+            h3{
+                color: #fff;
+                font: 600 23px/1 $open;
+                margin-left: -5px;
+                i:before{
+                    color: $bc;
+                    font-size: 54px;
+                    line-height: 1;
+                    position: relative;
+                    top: 10px;
+                    left: 5px;
+                }
+            }
+        }
+        .resources{
+            margin-top: -15px;
+            padding-left: 43px;
+            li{
+                a{
+                    font: 400 16px/42px $open;
+                    color: #787777;
+                    &:hover, &:focus{
+                        color: $bc;
+                    }
+                }
+            }
+        }
+        .r-2{
+            padding-left: 75px;
+        }
+        .w_services{
+            padding-left: 60px;
+            h6{
+                font: 400 16px/1 $open;
+                color: #787777;
+                padding-left: 15px;
+                padding-bottom: 45px;
+            }
+            img{
+                max-width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+    .copy_right{
+        background: #2c2b2b;
+        display: block;
+        overflow: hidden;
+        padding: 32px 0;
+        p{
+            font: 400 15px/32px $open;
+            color: #969494;
+            a{ 
+                color: $bc;
+                &:hover, &:focus{
+                    color: #969494;
+                }
+            }
+        }
+        .footer_nav{
+            text-align: right;
+            li{
+                display: inline-block;
+                padding-right: 12px;
+                &:last-child{
+                    padding-right: 0;
+                    padding-left: 20px;
+                    a{
+                        font-weight: 600;
+                        color: $bc;
+                    }
+                }
+                a{
+                    font: 400 16px/30px $open;
+                    color: #696868; 
+                    &:hover, &:focus{
+                        color: $bc;
+                    }
+                }
+            }
+        }
+    }
+}
+/* End Footer Home pages */
+.scroll-top{
+    position: fixed;
+    right: 30px;
+    bottom: 15px; 
+    height: 50px;
+    width: 50px; 
+    cursor: pointer;
+    background: $bc;
+    border: 0;
+    box-shadow: none;
+    z-index: 999;
+    color: #fff;
+    &:hover, &:focus{
+        background: #ce8506;
+    }  
+}

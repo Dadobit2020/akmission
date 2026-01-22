@@ -1,0 +1,367 @@
+/* latest_news_area */
+.latest_news_area{
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+    .c-f{ 
+        padding: 0 175px;
+        max-width: 100%;
+        h2{
+            text-align: center;
+            display: block;
+            font: 500 40px/60px $pop;
+            color: $heding; 
+            padding-bottom: 65px;
+        }
+    }
+    .news_items{
+        margin-bottom: 30px;
+        .news_ing{ 
+            display: block;
+            overflow: hidden;
+            padding: 0;
+            img{ 
+                transition: all 500ms linear 0s;
+                max-width: 100%;
+            }
+        }
+        a{
+            font: 500 20px/34px $pop;
+            color: $heding;
+            display: block;
+            padding-top: 50px; 
+        }
+        h6{
+            font: 400 15px $open;
+            color: #ff9e1c;
+            padding-top: 35px;
+            i{
+                font-size: 20px;
+                padding-right: 10px;
+            }
+        }
+        &:hover, &:focus{
+            a{ 
+                color: $bc;
+            }
+            .news_ing{ 
+                img{
+                    transform: scale3D(1.1,1.1,1);
+                }
+            }
+        }
+    }
+}
+.lna_2{
+    padding-bottom: 105px;
+}
+.lna_3{
+    padding: 65px 0 105px;
+}
+/* End latest_news_area */
+
+/* ======= Blog ======== */
+
+/* blog_list */
+.blog_list{
+    padding-top: 135px;
+    padding-bottom: 20px;
+    .blog_items{
+        margin-bottom: 60px;
+        .blog_img{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+                transition: all 500ms linear 0s;
+            }
+            span{
+                position: absolute;
+                left: 0;
+                top:20px;
+                background: $bc;
+                color: #fff;
+                font: 500 18px/52px $pop;
+                display: inline-block;
+                padding: 0 25px 0 15px;
+                border-radius: 0 30px 30px 0;
+            }
+        } 
+        &:hover, &:focus{ 
+            .blog_img{ 
+                img{
+                    transform: scale3D(1.1,1.1,1);
+                }
+            }
+        }
+        .admin_details{
+            display: block; 
+            background: #f7f7f7;
+            margin-top: 25px;
+            overflow: hidden;
+            .like_comment{
+                display: inline-block;
+                float: left;
+                li{
+                    display: inline-block;
+                    font: 400 16px/58px $open;
+                    color: rgba(0, 0, 0, 0.6);
+                    padding-left: 20px;
+                    &:first-child{
+                        padding-left: 37px;
+                    }
+                    a{
+                        color: rgba(0, 0, 0, 0.6);
+                         &:hover, &:focus{
+                            color: $bc;
+                        }
+                    }
+                }
+            }
+            .share_blog{
+                display: inline-block;
+                float: right;
+                li{
+                    a{
+                        line-height: 58px;
+                        color: #fff;
+                        background: $bc;
+                        font-size: 22px;
+                        display: block;
+                        width: 58px;
+                        text-align: center;
+                        position: relative;
+                        z-index: 9999; 
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu{
+                        position: absolute; 
+                        margin: 0;
+                        top: 0;
+                        left: 0;
+                        min-width: 247px;
+                        border: 0;
+                        border-radius: 0;
+                        padding: 0; 
+                        display: block; 
+                        transition: all 0.5s linear 0s;
+                        li {
+                            display: inline-block;
+                            a{
+                                &:hover, &:focus{
+                                    background: $heding;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    &:hover, &:focus{
+                        .dropdown-menu, .show{  
+                            left: -248px !important; 
+                        }
+                    }
+                }
+            }
+        }
+        .blog_heding{
+            display: block;
+            font: 500 35px/45px $pop;
+            color: $heding;
+            padding:40px 0 30px;
+            &:hover, &:focus{
+                color: $bc;
+            }
+        }
+        p{
+            line-height: 36px;
+        }
+        .ad_2{
+            background-color: transparent;
+            padding: 35px 0 0;
+            h4{
+                font: 500 22px/58px $pop;
+                color: $bc;
+                display: inline-block;
+                float: left;
+            }
+            .like_comment{
+                float: right;
+                padding-right: 25px;
+                li{
+                    padding: 0;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+    .blog_details{
+        margin-bottom: 30px;
+        p{
+            padding-bottom: 30px;
+        }
+        .bg1{
+            background: #ffd59c;
+            padding: 0;
+            margin-bottom: 10px; 
+            color: rgba(0, 0, 0, 0.902);
+            font-size: 18px;
+            font-family: $pop;
+            margin-top: 40px;
+        }
+        .bg2{
+            background: #f4dffe;
+            @extend .bg1;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .bg3{
+            background: #e0f7d9;
+            @extend .bg2;
+            display: inline-block;
+            margin-bottom: 45px;
+        }
+    }
+    .tag_area{
+        display: inline-block;
+        float: left;
+        li{
+            font: 500 18px/36px $pop;
+            color: #000;
+            display: inline-block;
+            &:first-child{
+                padding-right: 10px;
+            }
+            a{
+                color: #000;
+                &:hover, &:focus{
+                    color: $bc;
+                }
+            }
+        }
+    }
+    .share_square{
+        text-align: right;
+        li{
+            display: inline-block;
+            padding-left: 27px;
+            a{
+                font-size: 24px;
+                color: #a6a6a6;
+                &:hover, &:focus{
+                    color: $bc;
+                }
+            }
+        }
+    }
+    .looking{
+        padding-top: 100px;
+        .looking_text{
+            padding-right: 35px; 
+            a{
+                display: block; 
+                border: 1px solid #f1f0f0;
+                font: 500 20px/36px $pop;
+                color: $bc;
+                text-align: center;
+                padding: 25px;
+                @include transition; 
+                &:hover, &:focus, &.active{
+                    color: #fff;
+                    background: $bc;
+                    border-color: $bc;
+                }
+            }
+        } 
+        .lt_2{
+            padding-right: 15px;
+            padding-left: 35px;
+        }
+    }
+    .blog_comment{
+        display: block;
+        overflow: hidden;
+        padding-top: 120px;
+        .media{
+            margin-bottom: 70px;
+            img{
+                height: 81px;
+                width: 81px;
+            }
+            .media-body{
+                padding-left: 70px;
+                a{
+                    font: 500 18px/1 $pop;
+                    color: $heding;
+                    display: block; 
+                    &:hover, &:focus{
+                        color: $bc;
+                    }
+                }
+                h6{
+                    font: 400 15px/1 $open;
+                    color: #939393;
+                    display: inline-block;
+                    padding-top: 15px;
+                    a{
+                        display: inline-block;
+                        font: 500 16px/1 $pop;
+                        padding-left: 65px;
+                        color: #b4b4b4;
+                    }
+                }
+                p{
+                    padding-top: 35px;
+                }
+            }
+        }
+    }
+    .leave_comment{
+        padding-top: 50px;
+        h2{
+            font: 500 20px/32px $pop;
+            color: $heding;
+        }
+        .comment_from{
+            .form-group{
+                padding: 0 15px;
+                margin-bottom: 35px;
+                .form-control{
+                    border: 0;
+                    border-bottom: 1px solid #e6e6e6;
+                    padding: 0;
+                    font-size: 16px;
+                    color: #b4b4b4;
+                    padding-bottom: 5px;
+                    @include placeholder{
+                        color: #b4b4b4;
+                    }
+                    
+                &:focus{
+                    @include placeholder{
+                        color: transparent;
+                    }
+                    border-color: $bc; 
+                }
+                }
+                .comment_box{
+                    height: 145px;
+                    @include placeholder{
+                        padding-top: 90px;
+                    }
+                }
+                .theme_btn{
+                    border-radius: 0;
+                    line-height: 55px;
+                    min-width: 200px;
+                    font-size: 16px;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}
+/* End blog_list */
+ 

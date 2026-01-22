@@ -1,0 +1,96 @@
+/* ------------------------------------------------------
+@File: Default Styles
+@Author: Themazine
+@Developed By: Emran Khan
+@Developer URL: http://emran-khan.com
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+------------------------------------------------------- */
+
+/* ======================================================
+@Template Name: Ki charity
+@Author: Themazine 
+@Default Styles
+
+Table of Content:
+01/ Variables
+02/ Prefix
+03/ Header
+04/ Slider
+05/ Annual
+06/ Help
+07/ Causes 
+08/ Charity
+09/ Team
+10/ Events
+11/ News
+12/ Believe 
+13/ Tab
+14/ Gallery  
+15/ Form  
+16/ Faq  
+17/ Shop 
+18/ Footer  
+19/ Responsive   
+
+===================================================== */ 
+
+/*----------------------------------------------------*/
+@import "variables";
+/*----------------------------------------------------*/  
+@import "prefix";
+/*----------------------------------------------------*/ 
+@import "header";
+/*----------------------------------------------------*/  
+@import "slider";
+/*----------------------------------------------------*/ 
+@import "annual";
+/*----------------------------------------------------*/
+@import "help";
+/*----------------------------------------------------*/ 
+@import "causes";
+/*----------------------------------------------------*/  
+@import "charity";
+/*----------------------------------------------------*/  
+@import "team";
+/*----------------------------------------------------*/  
+@import "events";
+/*----------------------------------------------------*/  
+@import "news";
+/*----------------------------------------------------*/  
+@import "believe";
+/*----------------------------------------------------*/  
+@import "tab";
+/*----------------------------------------------------*/ 
+@import "gallery";
+/*----------------------------------------------------*/ 
+@import "form";
+/*----------------------------------------------------*/ 
+@import "faq";
+/*----------------------------------------------------*/ 
+@import "shop";    
+/*----------------------------------------------------*/   
+@import "footer";
+/*----------------------------------------------------*/  
+@import "responsive";
+/*---------------------------------------------------- */  
+
+/*All CSS call*/
+@import "../css/bootstrap.min.css"; /* Bootstrap CSS */
+/* Icon CSS */
+@import "../css/font-awesome.min.css"; 
+@import "../vendors/flat-icon/flaticon.css";
+/* Extra Plugins CSS */ 
+@import "../vendors/animate-css/animate.css"; 
+@import "../vendors/owl-carousel/owl.carousel.min.css";  
+@import "../vendors/bootstrap-selector/nice-select.css";
+@import "../vendors/lightbox/simpleLightbox.css";
+@import "../vendors/jquery-ui/jquery-ui.min.css";
+/* Rev slider css */  
+@import "../vendors/revolution/css/settings.css";
+@import "../vendors/revolution/css/layers.css"; 
+@import "../vendors/revolution/css/navigation.css";    
+/* Font family link */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700|Poppins:400,400i,500,600,700'); 
