@@ -2,3 +2,12 @@
 pictuers/School/DJI_20251210_093510_144_video.MP4
 *.MP4
 *.mp4
+
+# Exclude from deployment
+.DS_Store
+*.zip
+*_backup.html
+akecmissiontemplate/
+kicharity-charity-fundraising-html-template-2024-09-21-18-33-46-utc.zip
+index_backup.html
+pictuers/
