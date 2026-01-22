@@ -154,7 +154,7 @@ img {
 
 .right_info {
     display: flex;
-    gap: 25px;
+    gap: 15px;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -162,7 +162,7 @@ img {
 .right_info .media {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .right_info .media i {
