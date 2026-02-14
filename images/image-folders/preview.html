@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview - Addis Kidan Mission</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+        h1 { text-align: center; margin-bottom: 30px; color: #f39c12; }
+        h2 { color: #3498db; margin: 30px 0 15px; padding-bottom: 10px; border-bottom: 2px solid #3498db; }
+        .section { margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #16213e; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .card img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; transition: transform 0.3s; }
+        .card img:hover { transform: scale(1.02); }
+        .card-info { padding: 15px; }
+        .card-info h3 { font-size: 14px; color: #f39c12; margin-bottom: 5px; word-break: break-all; }
+        .card-info p { font-size: 12px; color: #888; }
+        .hero-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .hero-card img { height: 300px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
+        .modal.active { display: flex; }
+        .modal img { max-width: 95%; max-height: 95%; object-fit: contain; }
+        .modal-close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+        .stats { background: #16213e; padding: 20px; border-radius: 12px; margin-bottom: 30px; display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .stat { text-align: center; padding: 10px 20px; }
+        .stat-num { font-size: 36px; font-weight: bold; color: #f39c12; }
+        .stat-label { font-size: 14px; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Addis Kidan Mission - Image Preview</h1>
+    
+    <div class="stats">
+        <div class="stat"><div class="stat-num">88</div><div class="stat-label">Total Images</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Pages</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Size Variants</div></div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Homepage (12 images)</h2>
+        <h3 style="color:#888; margin: 10px 0;">Hero Slides (1920×800)</h3>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="homepage/hero_slide_01_mission_team.jpg" onclick="openModal(this)"><div class="card-info"><h3>hero_slide_01_mission_team</h3><p>1920×800 - Hero Slider</p></div></div>
+            <div class="card hero-card"><img src="homepage/hero_slide_02_medical_care.jpg" onclick="openModal(this)"><div class="card-info"><h3>hero_slide_02_medical_care</h3><p>1920×800 - Hero Slider</p></div></div>
+            <div class="card hero-card"><img src="homepage/hero_slide_03_education.jpg" onclick="openModal(this)"><div class="card-info"><h3>hero_slide_03_education</h3><p>1920×800 - Hero Slider</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Department Cards (800×600)</h3>
+        <div class="grid">
+            <div class="card"><img src="homepage/card_medical_dept.jpg" onclick="openModal(this)"><div class="card-info"><h3>card_medical_dept</h3><p>800×600</p></div></div>
+            <div class="card"><img src="homepage/card_education_dept.jpg" onclick="openModal(this)"><div class="card-info"><h3>card_education_dept</h3><p>800×600</p></div></div>
+            <div class="card"><img src="homepage/card_building_dept.jpg" onclick="openModal(this)"><div class="card-info"><h3>card_building_dept</h3><p>800×600</p></div></div>
+            <div class="card"><img src="homepage/card_outreach_dept.jpg" onclick="openModal(this)"><div class="card-info"><h3>card_outreach_dept</h3><p>800×600</p></div></div>
+            <div class="card"><img src="homepage/card_spiritual_dept.jpg" onclick="openModal(this)"><div class="card-info"><h3>card_spiritual_dept</h3><p>800×600</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Other Homepage Images</h3>
+        <div class="grid">
+            <div class="card"><img src="homepage/section_living_gospel.jpg" onclick="openModal(this)"><div class="card-info"><h3>section_living_gospel</h3><p>1200×900</p></div></div>
+            <div class="card"><img src="homepage/expedition_2023_card.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2023_card</h3><p>600×450</p></div></div>
+            <div class="card"><img src="homepage/expedition_2024_card.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2024_card</h3><p>600×450</p></div></div>
+            <div class="card"><img src="homepage/expedition_2025_card.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2025_card</h3><p>600×450</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 About (3 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="about/about_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>about_hero_banner</h3><p>1920×500</p></div></div>
+            <div class="card hero-card"><img src="about/about_vision_background.jpg" onclick="openModal(this)"><div class="card-info"><h3>about_vision_background</h3><p>1920×600</p></div></div>
+        </div>
+        <div class="grid">
+            <div class="card"><img src="about/about_sidebar_image.jpg" onclick="openModal(this)"><div class="card-info"><h3>about_sidebar_image</h3><p>400×300</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Medical (6 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="medical/medical_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_hero_banner</h3><p>1920×500</p></div></div>
+            <div class="card hero-card"><img src="medical/medical_gallery_background.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_gallery_background</h3><p>1920×600</p></div></div>
+        </div>
+        <div class="grid">
+            <div class="card"><img src="medical/medical_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_gallery_01</h3><p>800×600</p></div></div>
+            <div class="card"><img src="medical/medical_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_gallery_02</h3><p>800×600</p></div></div>
+            <div class="card"><img src="medical/medical_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_gallery_03</h3><p>800×600</p></div></div>
+            <div class="card"><img src="medical/medical_support_image.jpg" onclick="openModal(this)"><div class="card-info"><h3>medical_support_image</h3><p>1200×900</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Building (11 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="building/building_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_hero_banner</h3><p>1920×500</p></div></div>
+            <div class="card hero-card"><img src="building/building_more_views_background.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_more_views_background</h3><p>1920×600</p></div></div>
+        </div>
+        <div class="grid">
+            <div class="card"><img src="building/building_school_main.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_school_main</h3><p>1200×900</p></div></div>
+            <div class="card"><img src="building/building_school_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_school_gallery_01</h3><p>1000×750</p></div></div>
+            <div class="card"><img src="building/building_school_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_school_gallery_02</h3><p>1000×750</p></div></div>
+            <div class="card"><img src="building/building_school_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_school_gallery_03</h3><p>1000×750</p></div></div>
+            <div class="card"><img src="building/building_school_gallery_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_school_gallery_04</h3><p>1000×750</p></div></div>
+            <div class="card"><img src="building/building_more_views_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_more_views_01</h3><p>800×600</p></div></div>
+            <div class="card"><img src="building/building_more_views_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_more_views_02</h3><p>800×600</p></div></div>
+            <div class="card"><img src="building/building_more_views_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_more_views_03</h3><p>800×600</p></div></div>
+            <div class="card"><img src="building/building_support_image.jpg" onclick="openModal(this)"><div class="card-info"><h3>building_support_image</h3><p>1200×900</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Education (6 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="education/education_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_hero_banner</h3><p>1920×500</p></div></div>
+            <div class="card hero-card"><img src="education/education_gallery_background.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_gallery_background</h3><p>1920×600</p></div></div>
+        </div>
+        <div class="grid">
+            <div class="card"><img src="education/education_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_gallery_01</h3><p>800×600</p></div></div>
+            <div class="card"><img src="education/education_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_gallery_02</h3><p>800×600</p></div></div>
+            <div class="card"><img src="education/education_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_gallery_03</h3><p>800×600</p></div></div>
+            <div class="card"><img src="education/education_support_image.jpg" onclick="openModal(this)"><div class="card-info"><h3>education_support_image</h3><p>1200×900</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Expeditions (13 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="expeditions/expeditions_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>expeditions_hero_banner</h3><p>1920×500</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">2023 Expedition</h3>
+        <div class="grid">
+            <div class="card"><img src="expeditions/expedition_2023_hero.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2023_hero</h3><p>1200×900</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2023_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2023_gallery_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2023_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2023_gallery_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2023_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2023_gallery_03</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">2024 Expedition</h3>
+        <div class="grid">
+            <div class="card"><img src="expeditions/expedition_2024_hero.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2024_hero</h3><p>1200×900</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2024_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2024_gallery_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2024_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2024_gallery_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2024_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2024_gallery_03</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">2025 Expedition</h3>
+        <div class="grid">
+            <div class="card"><img src="expeditions/expedition_2025_hero.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2025_hero</h3><p>1200×900</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2025_gallery_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2025_gallery_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2025_gallery_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2025_gallery_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="expeditions/expedition_2025_gallery_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>expedition_2025_gallery_03</h3><p>600×450</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Gallery (31 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="gallery/gallery_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_hero_banner</h3><p>1920×500</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Medical Gallery</h3>
+        <div class="grid">
+            <div class="card"><img src="gallery/medical/gallery_medical_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/medical/gallery_medical_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/medical/gallery_medical_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_03</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/medical/gallery_medical_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_04</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/medical/gallery_medical_05.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_05</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/medical/gallery_medical_06.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_medical_06</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Education Gallery</h3>
+        <div class="grid">
+            <div class="card"><img src="gallery/education/gallery_education_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/education/gallery_education_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/education/gallery_education_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_03</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/education/gallery_education_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_04</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/education/gallery_education_05.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_05</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/education/gallery_education_06.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_education_06</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Building Gallery</h3>
+        <div class="grid">
+            <div class="card"><img src="gallery/building/gallery_building_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/building/gallery_building_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/building/gallery_building_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_03</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/building/gallery_building_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_04</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/building/gallery_building_05.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_05</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/building/gallery_building_06.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_building_06</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Outreach Gallery</h3>
+        <div class="grid">
+            <div class="card"><img src="gallery/outreach/gallery_outreach_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/outreach/gallery_outreach_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/outreach/gallery_outreach_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_03</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/outreach/gallery_outreach_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_04</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/outreach/gallery_outreach_05.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_05</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/outreach/gallery_outreach_06.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_outreach_06</h3><p>600×450</p></div></div>
+        </div>
+        <h3 style="color:#888; margin: 20px 0 10px;">Team Gallery</h3>
+        <div class="grid">
+            <div class="card"><img src="gallery/team/gallery_team_01.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_01</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/team/gallery_team_02.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_02</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/team/gallery_team_03.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_03</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/team/gallery_team_04.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_04</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/team/gallery_team_05.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_05</h3><p>600×450</p></div></div>
+            <div class="card"><img src="gallery/team/gallery_team_06.jpg" onclick="openModal(this)"><div class="card-info"><h3>gallery_team_06</h3><p>600×450</p></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Support (6 images)</h2>
+        <div class="hero-grid">
+            <div class="card hero-card"><img src="support/support_hero_banner.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_hero_banner</h3><p>1920×500</p></div></div>
+            <div class="card hero-card"><img src="support/support_impact_background.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_impact_background</h3><p>1920×600</p></div></div>
+        </div>
+        <div class="grid">
+            <div class="card"><img src="support/support_give_financial.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_give_financial</h3><p>400×300</p></div></div>
+            <div class="card"><img src="support/support_give_volunteer.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_give_volunteer</h3><p>400×300</p></div></div>
+            <div class="card"><img src="support/support_give_prayer.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_give_prayer</h3><p>400×300</p></div></div>
+            <div class="card"><img src="support/support_give_supplies.jpg" onclick="openModal(this)"><div class="card-info"><h3>support_give_supplies</h3><p>400×300</p></div></div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modal-img" src="">
+    </div>
+
+    <script>
+        function openModal(img) {
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
