@@ -12,6 +12,813 @@
     <link href="../vendors/flat-icon/flaticon.css" rel="stylesheet">
     <link href="../css/styles-integrated.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Current Project Section ── */
+        .current-project-section {
+            padding: 90px 0 80px;
+            background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .current-project-section::before {
+            content: '';
+            position: absolute;
+            top: -80px; left: -80px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(217,119,6,0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .current-project-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -60px;
+            width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(217,119,6,0.13) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Badge */
+        .cp-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .cp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, #D97706, #F59E0B);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 6px 18px 6px 12px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(217,119,6,0.45);
+            animation: pulse-badge 2.2s ease-in-out infinite;
+        }
+        .cp-badge .dot {
+            width: 8px; height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: blink 1.1s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 4px 20px rgba(217,119,6,0.45); }
+            50% { box-shadow: 0 4px 32px rgba(217,119,6,0.75); }
+        }
+
+        /* Heading */
+        .cp-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .cp-heading span {
+            color: #F59E0B;
+        }
+        .cp-subheading {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Stat pills */
+        .cp-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .cp-stat {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 10px;
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            backdrop-filter: blur(6px);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .cp-stat:hover {
+            background: rgba(217,119,6,0.18);
+            transform: translateY(-2px);
+        }
+        .cp-stat-icon {
+            font-size: 26px;
+            line-height: 1;
+        }
+        .cp-stat-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .cp-stat-value {
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cp-stat-value.gold { color: #F59E0B; }
+
+        /* Progress bar */
+        .cp-progress-wrap {
+            margin-bottom: 28px;
+        }
+        .cp-progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .cp-progress-bar-bg {
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .cp-progress-bar-fill {
+            height: 100%;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #D97706, #FBBF24);
+            width: 55%;
+            position: relative;
+            animation: grow-bar 1.6s ease-out forwards;
+            transform-origin: left;
+        }
+        @keyframes grow-bar {
+            from { width: 0%; }
+            to { width: 55%; }
+        }
+        .cp-progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 50%;
+            transform: translateY(-50%);
+            width: 16px; height: 16px;
+            background: #FBBF24;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(251,191,36,0.8);
+        }
+
+        /* CTA button */
+        .cp-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #D97706, #F59E0B);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(217,119,6,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cp-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(217,119,6,0.6);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* ── Image grid ── */
+        .cp-gallery {
+            position: relative;
+            z-index: 1;
+        }
+        .cp-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 14px;
+        }
+        .cp-img-card {
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .cp-img-card:hover {
+            transform: scale(1.025) translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+        }
+        .cp-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        /* Hero image spans full width */
+        .cp-img-card.hero {
+            grid-column: 1 / -1;
+            height: 280px;
+        }
+        .cp-img-card.thumb {
+            height: 200px;
+        }
+
+        /* Overlay labels on images */
+        .cp-img-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.72));
+            padding: 20px 16px 12px;
+        }
+        .cp-img-tag {
+            display: inline-block;
+            background: rgba(217,119,6,0.9);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .cp-img-title {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Divider accent */
+        .cp-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #D97706, #FBBF24);
+            border-radius: 2px;
+            margin-bottom: 22px;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .cp-heading { font-size: 26px; }
+            .cp-gallery-grid { grid-template-columns: 1fr; }
+            .cp-img-card.hero { height: 200px; }
+            .cp-img-card.thumb { height: 170px; }
+            .cp-stats { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header_top_area"> 
+        <div class="container">  
+            <div class="header_top_inner row">
+                <ul class="header_social col-lg-6">
+                    <li><a href="support_integrated.html" class="need_help active">Support Our Mission</a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>  
+                <div class="right_menu col-lg-6"> 
+                    <ul class="right_nav">
+                        <li><a href="gallery_integrated.html">Media Gallery</a></li>
+                        <li><a href="about_integrated.html">Our Story</a></li>  
+                        <li><a href="support_integrated.html">Get Involved</a></li> 
+                    </ul>
+                </div> 
+            </div>
+        </div> 
+    </div>
+    
+    <div class="header_logo_area"> 
+        <div class="container">  
+            <div class="header_logo_inner">
+                <div class="logo-wrapper">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../images/logo/addis-kidan-logo.svg" alt="Addis Kidan Mission Logo">
+                    </a>
+                </div>
+                <div class="right_info"> 
+                    <div class="media">
+                        <i class="flaticon-clock"></i>
+                        <div class="media-body">
+                            <h6>Serving Since</h6>
+                            <h5>2023</h5>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <i class="flaticon-phone-call"></i>
+                        <div class="media-body">
+                            <h6>Contact Us</h6>
+                            <h5>(720) 857-9402</h5>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <i class="flaticon-multimedia multimedia"></i>
+                        <div class="media-body">
+                            <h6>Email Us</h6>
+                            <h5>mission@addiskidan.org</h5>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div> 
+    </div>
+
+    <header class="main_header_area"> 
+       <div class="container">
+            <div class="header_menu"> 
+                <nav class="navbar navbar-expand-lg"> 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar_supported"  aria-expanded="false" aria-label="Toggle navigation"> 
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="collapse navbar-collapse navbar_supported">
+                        <ul class="navbar-nav"> 
+                            <li><a class="nav-link" href="../index.html">Home</a></li>        
+                            <li><a class="nav-link" href="about_integrated.html">Our Mission</a></li> 
+                            <li><a class="nav-link" href="mission_trips_integrated.html">Burkina Faso Mission Trips</a></li>  
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Departments</a>
+                                <ul class="dropdown-menu">  
+                                    <li><a href="medical_integrated.html">Medical Outreach</a></li> 
+                                    <li><a href="education_integrated.html">Education</a></li> 
+                                    <li><a href="building_integrated.html" class="active">Renovation & Building</a></li> 
+                                </ul>
+                            </li>     
+                            <li><a class="nav-link" href="gallery_integrated.html">Media Gallery</a></li>  
+                            <li><a class="nav-link" href="support_integrated.html">Support Us</a></li>  
+                        </ul>  
+                    </div>
+                </nav> 
+                <ul class="search_button_content nav">
+                    <li><a href="support_integrated.html" class="quote_btn">Partner With Us <i class="flaticon-blood-donation"></i></a></li>
+                </ul> 
+           </div>
+        </div>
+    </header>
+    
+    <section class="hero_slider_area">
+        <div class="hero_slide" style="background-image: linear-gradient(135deg, rgba(217, 119, 6, 0.8) 0%, rgba(146, 64, 14, 0.8) 100%), url('../images_by_page/building/building_hero_banner.jpg'); height: 400px;">
+            <div class="container">
+                <div class="hero_content">
+                    <div style="font-size: 60px; margin-bottom: 20px;">🏗️</div>
+                    <h1 class="hero_title">Renovation & Building</h1>
+                    <p class="hero_text">Building infrastructure for lasting Kingdom impact</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CURRENT PROJECT — Church Construction in Burkina Faso
+    ════════════════════════════════════════════════ -->
+    <section class="current-project-section" id="current-project">
+        <div class="container" style="position: relative; z-index: 1;">
+
+            <div class="row align-items-center">
+                <!-- LEFT: Info panel -->
+                <div class="col-lg-5" style="margin-bottom: 40px;">
+                    <div class="cp-badge-wrap">
+                        <span class="cp-badge"><span class="dot"></span>Current Project</span>
+                    </div>
+
+                    <div class="cp-divider"></div>
+
+                    <h2 class="cp-heading">
+                        Building a <span>Church</span><br>in Burkina Faso
+                    </h2>
+                    <p class="cp-subheading">
+                        An upcoming house of worship designed to serve a congregation of 300, 
+                        rising from the land of Songpelse — a testament to faith, 
+                        generosity, and community.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="cp-stats">
+                        <div class="cp-stat">
+                            <div class="cp-stat-icon">🙏</div>
+                            <div>
+                                <div class="cp-stat-label">Capacity</div>
+                                <div class="cp-stat-value gold">~300 People</div>
+                            </div>
+                        </div>
+                        <div class="cp-stat">
+                            <div class="cp-stat-icon">💵</div>
+                            <div>
+                                <div class="cp-stat-label">Project Cost</div>
+                                <div class="cp-stat-value">$3,000 USD</div>
+                            </div>
+                        </div>
+                        <div class="cp-stat">
+                            <div class="cp-stat-icon">📅</div>
+                            <div>
+                                <div class="cp-stat-label">Target Completion</div>
+                                <div class="cp-stat-value gold">2026</div>
+                            </div>
+                        </div>
+                        <div class="cp-stat">
+                            <div class="cp-stat-icon">📍</div>
+                            <div>
+                                <div class="cp-stat-label">Location</div>
+                                <div class="cp-stat-value">Ouagadougou, BF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress -->
+                    <div class="cp-progress-wrap">
+                        <div class="cp-progress-label">
+                            <span>Construction Progress</span>
+                            <span style="color: #F59E0B;">In Progress</span>
+                        </div>
+                        <div class="cp-progress-bar-bg">
+                            <div class="cp-progress-bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quote -->
+                    <div style="background: rgba(217,119,6,0.12); border-left: 3px solid #D97706; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 28px;">
+                        <p style="color: rgba(255,255,255,0.85); font-style: italic; margin: 0; font-size: 15px; line-height: 1.7;">
+                            "A place where 300 hearts will gather to worship — built by faith, 
+                            sustained by generosity, standing for eternity."
+                        </p>
+                    </div>
+
+                    <a href="support_integrated.html" class="cp-cta-btn">
+                        <i class="fa fa-heart"></i> Support This Project
+                    </a>
+                </div>
+
+                <!-- RIGHT: Image gallery -->
+                <div class="col-lg-7 cp-gallery">
+                    <div class="cp-gallery-grid">
+
+                        <!-- 3D Render — hero slot -->
+                        <div class="cp-img-card hero">
+                            <img src="../images/church_building/Churchpic_3D.jpeg" alt="Church 3D Architectural Render">
+                            <div class="cp-img-overlay">
+                                <div class="cp-img-tag">3D Architectural Render</div>
+                                <p class="cp-img-title">Church Building — Design Vision</p>
+                            </div>
+                        </div>
+
+                        <!-- Current photo -->
+                        <div class="cp-img-card thumb">
+                            <img src="../images/church_building/Church_pic_1.jpeg" alt="Church Construction Photo">
+                            <div class="cp-img-overlay">
+                                <div class="cp-img-tag">On Site</div>
+                                <p class="cp-img-title">Current Build Progress</p>
+                            </div>
+                        </div>
+
+                        <!-- Site plan collage -->
+                        <div class="cp-img-card thumb" style="position: relative; background: #0f2444;">
+                            <!-- Stack the two site plans side-by-side inside one card -->
+                            <div style="display: flex; height: 100%;">
+                                <img src="../images/church_building/Siteplan_1.jpeg" 
+                                     alt="Site Plan — Location" 
+                                     style="width: 50%; height: 100%; object-fit: cover; border-right: 2px solid rgba(255,255,255,0.15);">
+                                <img src="../images/church_building/Siteplan_2.jpeg" 
+                                     alt="Site Plan — Plot Survey" 
+                                     style="width: 50%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="cp-img-overlay">
+                                <div class="cp-img-tag">Official Survey</div>
+                                <p class="cp-img-title">Site Plan — 1,941 m² · Songpelse, Kadiogo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom detail strip -->
+            <div style="margin-top: 56px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6" style="margin-bottom: 24px;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">⛪</div>
+                        <div style="font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 700; color: #F59E0B;">1</div>
+                        <div style="font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase;">Church Building</div>
+                    </div>
+                    <div class="col-md-3 col-6" style="margin-bottom: 24px;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">📐</div>
+                        <div style="font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 700; color: #F59E0B;">1,941 m²</div>
+                        <div style="font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase;">Total Plot Area</div>
+                    </div>
+                    <div class="col-md-3 col-6" style="margin-bottom: 24px;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">🏘️</div>
+                        <div style="font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 700; color: #F59E0B;">Songpelse</div>
+                        <div style="font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase;">Community Served</div>
+                    </div>
+                    <div class="col-md-3 col-6" style="margin-bottom: 24px;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">🌍</div>
+                        <div style="font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 700; color: #F59E0B;">Burkina Faso</div>
+                        <div style="font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase;">West Africa</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════ END CURRENT PROJECT ═ -->
+
+
+    <section class="quick_help_need" style="padding: 80px 0; background: #fff;">
+        <div class="container">
+            <div class="row align-items-center" style="margin-bottom: 80px;">
+                <div class="col-lg-6" style="margin-bottom: 30px;">
+                    <h2>Our School Building Project</h2>
+                    <p class="lead" style="font-size: 20px; font-weight: 600; color: #D97706; margin-bottom: 20px;">A Testament to Faith and Generosity</p>
+                    <p style="font-size: 18px; line-height: 1.8;">This school in Burkina Faso was built by Addis Kidan Mission, <strong>fully funded by Addis Kidan Evangelical Church families</strong>. Through their generous giving and commitment to the Gospel, we constructed a facility that will serve generations of children.</p>
+                    <p style="font-size: 18px; line-height: 1.8;">The building stands as a physical representation of our church's dedication to holistic ministry—providing not just spiritual teaching, but also educational opportunities that transform entire communities.</p>
+                    <div style="background: #FEF3C7; padding: 20px; border-left: 4px solid #D97706; margin: 20px 0;">
+                        <p style="font-style: italic; margin: 0;">"This is more than a building—it's a legacy of faith, a monument to generosity, and a beacon of hope for countless children who will learn and grow within these walls."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images_by_page/building/building_school_main.jpg" alt="School Building" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 80px;">
+                <h3 style="text-align: center; margin-bottom: 40px;">School Building Gallery</h3>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: #6B7280;">Multiple views of our completed school facility in Burkina Faso, fully funded by Addis Kidan Evangelical Church families</p>
+                <div class="row">
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <img src="../images_by_page/building/building_school_gallery_01.jpg" alt="School Building Aerial View" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                        <p style="text-align: center; margin-top: 10px; color: #6B7280; font-size: 14px;">Aerial view of the school building</p>
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <img src="../images_by_page/building/building_school_gallery_02.jpg" alt="School Building Campus" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                        <p style="text-align: center; margin-top: 10px; color: #6B7280; font-size: 14px;">School campus overview</p>
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <img src="../images_by_page/building/building_school_gallery_03.jpg" alt="School Building Structure" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                        <p style="text-align: center; margin-top: 10px; color: #6B7280; font-size: 14px;">School building structure</p>
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <img src="../images_by_page/building/building_school_gallery_04.jpg" alt="School Building Exterior" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+                        <p style="text-align: center; margin-top: 10px; color: #6B7280; font-size: 14px;">School building exterior</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+                <h2>Infrastructure as Ministry</h2>
+                <p class="lead" style="font-size: 20px; font-weight: 600; color: #D97706;">Physical structures create spaces for spiritual and community transformation. Our building projects provide safe, functional facilities where ministry can flourish.</p>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 40px;">Our Building Philosophy</h3>
+            <div class="row">
+                <div class="col-md-6 col-lg-3" style="margin-bottom: 30px;">
+                    <div style="text-align: center; padding: 30px; background: #F3F4F6; border-radius: 10px; height: 100%;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">🏛️</div>
+                        <h4 style="color: #D97706;">Quality Construction</h4>
+                        <p>We build with excellence, using quality materials and skilled labor to ensure lasting impact.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" style="margin-bottom: 30px;">
+                    <div style="text-align: center; padding: 30px; background: #F3F4F6; border-radius: 10px; height: 100%;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">🤝</div>
+                        <h4 style="color: #D97706;">Local Partnership</h4>
+                        <p>Working with local builders and craftsmen to create jobs and build capacity.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" style="margin-bottom: 30px;">
+                    <div style="text-align: center; padding: 30px; background: #F3F4F6; border-radius: 10px; height: 100%;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">🌱</div>
+                        <h4 style="color: #D97706;">Sustainable Design</h4>
+                        <p>Creating structures that communities can maintain and use for generations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" style="margin-bottom: 30px;">
+                    <div style="text-align: center; padding: 30px; background: #F3F4F6; border-radius: 10px; height: 100%;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">⛪</div>
+                        <h4 style="color: #D97706;">Kingdom Purpose</h4>
+                        <p>Every structure serves the mission of advancing God's Kingdom.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 style="text-align: center; margin-bottom: 40px;">Building Projects Completed</h3>
+                <div class="row">
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <div style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); border-left: 4px solid #D97706;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span style="background: #D97706; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">✓</span>
+                                <h4 style="margin: 0;">School Construction</h4>
+                            </div>
+                            <p>Completed a full school facility with multiple classrooms, fully funded by AKEC families. Now serving hundreds of students.</p>
+                            <div style="background: #E5E7EB; height: 10px; border-radius: 5px; margin: 15px 0;">
+                                <div style="background: #D97706; height: 10px; border-radius: 5px; width: 100%;"></div>
+                            </div>
+                            <span style="color: #6B7280; font-size: 14px;">Project completed</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <div style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); border-left: 4px solid #D97706;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span style="background: #D97706; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">✓</span>
+                                <h4 style="margin: 0;">Church Renovations</h4>
+                            </div>
+                            <p>Renovated and improved local church facilities, creating better spaces for worship and community gatherings.</p>
+                            <div style="background: #E5E7EB; height: 10px; border-radius: 5px; margin: 15px 0;">
+                                <div style="background: #D97706; height: 10px; border-radius: 5px; width: 85%;"></div>
+                            </div>
+                            <span style="color: #6B7280; font-size: 14px;">85% complete</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <div style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); border-left: 4px solid #D97706;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span style="background: #D97706; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">⏳</span>
+                                <h4 style="margin: 0;">Community Center</h4>
+                            </div>
+                            <p>Planning and initial construction of a multi-purpose community center for meetings, training, and events.</p>
+                            <div style="background: #E5E7EB; height: 10px; border-radius: 5px; margin: 15px 0;">
+                                <div style="background: #D97706; height: 10px; border-radius: 5px; width: 40%;"></div>
+                            </div>
+                            <span style="color: #6B7280; font-size: 14px;">40% complete - in progress</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" style="margin-bottom: 30px;">
+                        <div style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); border-left: 4px solid #D97706;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <span style="background: #D97706; color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">✓</span>
+                                <h4 style="margin: 0;">Infrastructure Improvements</h4>
+                            </div>
+                            <p>Various improvements including water systems, electrical work, and facility maintenance across multiple sites.</p>
+                            <div style="background: #E5E7EB; height: 10px; border-radius: 5px; margin: 15px 0;">
+                                <div style="background: #D97706; height: 10px; border-radius: 5px; width: 75%;"></div>
+                            </div>
+                            <span style="color: #6B7280; font-size: 14px;">75% of planned improvements done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="charity_organizations" style="background-image: linear-gradient(135deg, rgba(217, 119, 6, 0.9) 0%, rgba(146, 64, 14, 0.9) 100%), url('../images_by_page/building/building_more_views_background.jpg'); background-size: cover; background-position: center; color: #fff; padding: 80px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2" style="text-align: center;">
+                    <h2 style="color: #fff; margin-bottom: 30px;">More School Views</h2>
+                    <p style="font-size: 18px; margin-bottom: 40px;">Additional perspectives of our completed school building</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 30px;">
+                    <img src="../images_by_page/building/building_more_views_01.jpg" alt="School Building View" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+                </div>
+                <div class="col-md-4" style="margin-bottom: 30px;">
+                    <img src="../images_by_page/building/building_more_views_02.jpg" alt="School Campus" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+                </div>
+                <div class="col-md-4" style="margin-bottom: 30px;">
+                    <img src="../images_by_page/building/building_more_views_03.jpg" alt="School Facility" class="img-fluid rounded" style="box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="gallery_integrated.html" class="theme_btn" style="background: #fff; color: #D97706;">View Full Gallery <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick_help_need" style="padding: 80px 0; background: #F3F4F6;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" style="margin-bottom: 30px;">
+                    <h2>Support Our Building Projects</h2>
+                    <p class="lead" style="color: #D97706;">Your partnership enables us to create lasting infrastructure for ministry.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><i class="fa fa-check" style="color: #D97706; margin-right: 10px;"></i> Fund school and church construction</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><i class="fa fa-check" style="color: #D97706; margin-right: 10px;"></i> Provide building materials and tools</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><i class="fa fa-check" style="color: #D97706; margin-right: 10px;"></i> Support infrastructure improvements</li>
+                        <li style="padding: 10px 0;"><i class="fa fa-check" style="color: #D97706; margin-right: 10px;"></i> Sponsor skilled labor and training</li>
+                    </ul>
+                    <a href="support_integrated.html" class="theme_btn" style="margin-top: 20px;">Partner With Us <i class="flaticon-play-button"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images_by_page/building/building_support_image.jpg" alt="Building Support" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_area">
+        <div class="container">
+            <div class="footer_inner row"> 
+                <div class="col-lg-4 col-md-6 footer_logo">
+                    <h3>Addis Kidan Mission</h3>
+                    <p>Evangelical Church Mission Department - Transforming lives through holistic Gospel ministry in Burkina Faso and beyond</p>
+                    <h3><i class="flaticon-phone-call"></i>(720) 857-9402</h3>
+                </div>
+                <ul class="col-lg-2 col-md-3 resources">  
+                    <li><h6>Quick Links</h6></li>
+                    <li><a href="about_integrated.html">Our Mission</a></li>  
+                    <li><a href="mission_trips_integrated.html">Mission Trips</a></li>  
+                    <li><a href="gallery_integrated.html">Media Gallery</a></li>  
+                    <li><a href="support_integrated.html">Support Us</a></li>  
+                </ul> 
+                <ul class="col-lg-2 col-md-3 resources r-2">  
+                    <li><h6>Departments</h6></li>
+                    <li><a href="medical_integrated.html">Medical</a></li>   
+                    <li><a href="education_integrated.html">Education</a></li>   
+                    <li><a href="building_integrated.html">Building</a></li>     
+                </ul> 
+                <div class="col-lg-4 col-md-6 w_services">
+                    <h6>Connect With Us</h6>
+                    <p>Email: mission@addiskidan.org</p>
+                    <ul class="footer_social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="copy_right">
+           <div class="container">
+              <div class="row"> 
+                   <div class="col-lg-12 text-center"> 
+                        <p>&copy; 2025 Addis Kidan Evangelical Church Mission Department. All rights reserved.</p>
+                   </div>
+              </div> 
+           </div>
+        </div>
+    </footer>
+    
+    <button class="scroll-top"><i class="fa fa-angle-double-up"></i></button> 
+    
+    <script src="../js/jquery-3.3.1.min.js"></script> 
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/script.js"></script>
+    
+    <script>
+        jQuery(document).ready(function($) {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.scroll-top').fadeIn();
+                } else {
+                    $('.scroll-top').fadeOut();
+                }
+            });
+            $('.scroll-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Renovation & Building - Addis Kidan Mission</title>
+    
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendors/flat-icon/flaticon.css" rel="stylesheet">
+    <link href="../css/styles-integrated.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -369,4 +1176,4 @@
         });
     </script>
 </body>
-</html>
+</html> -->
